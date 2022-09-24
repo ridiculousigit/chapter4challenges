@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="datanote"
+            type="binar.academy.chapter4challenge.room.DataNote" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:padding="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"ID\t\t\t\t\t: " + datanote.id}'
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"Judul\t: " + datanote.title}'
+                android:layout_below="@+id/tvId"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/btnEditNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_toLeftOf="@id/btnDeleteNote"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_edit" />
+
+            <ImageView
+                android:id="@+id/btnDeleteNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_delete" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
